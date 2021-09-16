@@ -104,7 +104,8 @@
             color: white;
             position: relative;
             cursor: pointer;
-            
+            font-weight: 800;
+            padding-left: 24px;
         }
 
         .rules-title_red {
@@ -120,30 +121,30 @@
           line-height: 24px;
         }
 
-        #rules-view-button.hide:after {
+        #rules-view-button.hide:before {
           margin-left: 10px;
           content: '';
           position: absolute;
-          left: 117px;
-          top: 6px;
-          width: 0;
-          height: 0;
-          border-left: 9px solid transparent;
-          border-right: 9px solid transparent;
-          border-top: 16px solid white;
-          clear: both;
-        }
-        #rules-view-button.show:after {
-          margin-left: 10px;
-          content: '';
-          position: absolute;
-          left: 117px;
+          left: -18px;
           top: 6px;
           width: 0;
           height: 0;
           border-left: 9px solid transparent;
           border-right: 9px solid transparent;
           border-bottom: 16px solid white;
+          clear: both;
+        }
+        #rules-view-button.show:before {
+          margin-left: 10px;
+          content: '';
+          position: absolute;
+          left: -18px;
+          top: 6px;
+          width: 0;
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-top: 16px solid white;
           clear: both;
         }
     </style>
