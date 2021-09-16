@@ -40,7 +40,6 @@
             left: 0;
             height: calc(100vh - 240px);
             width: 100%;
-            overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -90,12 +89,69 @@
         .frameblock {
             display: none;
         }
+
+        .rules {
+            color: white;
+        }
+
+        #rules-container.hide {
+          display: none;
+        }
+
+        .rules-title {
+            font-size: 25px;
+            margin: 30px 0 0 25px;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            
+        }
+
+        .rules-title_red {
+            color: #c50000;
+            font-size: 25px;
+            margin-left: 30px;
+        }
+
+        #rules-mk, #rules-ufc, #rules-dirt {
+          display: none;
+          padding-right: 10px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        #rules-view-button.hide:after {
+          margin-left: 10px;
+          content: '';
+          position: absolute;
+          left: 117px;
+          top: 6px;
+          width: 0;
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-top: 16px solid white;
+          clear: both;
+        }
+        #rules-view-button.show:after {
+          margin-left: 10px;
+          content: '';
+          position: absolute;
+          left: 117px;
+          top: 6px;
+          width: 0;
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-bottom: 16px solid white;
+          clear: both;
+        }
     </style>
 </head>
 <body>
 <div class="header">
     <div class="logo">
-        <svg width="80" viewBox="0 0 281 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100" viewBox="0 0 281 190" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M75.9267 0H205.073C225.203 0.0217652 244.503 7.70197 258.737 21.3559C272.97 35.0102 280.98 53.5227 281 72.8324C280.98 92.1437 272.97 110.654 258.737 124.307C244.503 137.964 225.203 145.644 205.073 145.667H75.9267C55.7967 145.644 36.4977 137.964 22.2633 124.307C8.0292 110.654 0.02269 92.1437 0 72.8324C0.02269 53.5227 8.02954 35.0102 22.2636 21.3559C36.4977 7.70197 55.7967 0.0217652 75.9267 0Z" fill="white"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M202.414 20.5525C191.934 20.5518 181.689 23.6179 172.972 29.3624C164.259 35.1073 157.464 43.2725 153.455 52.8261C149.442 62.3796 148.394 72.8919 150.437 83.0347C152.484 93.1751 157.532 102.494 164.94 109.803C172.352 117.115 181.794 122.096 192.075 124.112C202.353 126.131 213.009 125.093 222.693 121.138C232.375 117.179 240.653 110.478 246.473 101.882C252.297 93.2815 255.406 83.1744 255.406 72.8324C255.399 58.9682 249.815 45.6732 239.877 35.8695C229.943 26.0658 216.469 20.5558 202.414 20.5501V20.5525ZM202.414 136.268C189.698 136.268 177.268 132.549 166.694 125.579C156.119 118.606 147.881 108.698 143.012 97.1075C138.147 85.5165 136.874 72.7625 139.354 60.4573C141.835 48.1521 147.959 36.849 156.952 27.9774C165.942 19.1059 177.4 13.0643 189.873 10.6163C202.343 8.16874 215.271 9.42498 227.02 14.226C238.768 19.0274 248.81 27.158 255.874 37.5899C262.942 48.0217 266.712 60.2863 266.712 72.8324C266.699 89.6519 259.921 105.781 247.866 117.674C235.811 129.568 219.463 136.255 202.414 136.268Z" fill="#151616"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M77.6451 136.268C68.3042 136.272 59.0782 134.206 50.6285 130.217C42.1785 126.228 34.7141 120.419 28.7697 113.203C22.825 105.987 18.5479 97.5436 16.2445 88.4746C13.9412 79.4099 13.6685 69.9456 15.446 60.7611C17.2235 51.577 21.0073 42.9001 26.5265 35.3525C32.0457 27.8048 39.1633 21.5732 47.3692 17.1039C55.5754 12.6349 64.6671 10.039 73.9928 9.50203C83.3181 8.96508 92.647 10.5008 101.31 13.999C101.987 14.2734 102.602 14.679 103.122 15.1916C103.643 15.7046 104.056 16.3155 104.341 16.9885C104.625 17.6618 104.775 18.3844 104.78 19.1154C104.786 19.8463 104.647 20.5712 104.373 21.2489C104.099 21.9262 103.694 22.543 103.182 23.0637C102.67 23.5843 102.06 23.9992 101.388 24.284C100.715 24.5688 99.9939 24.7181 99.2641 24.7235C98.5343 24.7291 97.8104 24.5907 97.1341 24.3159C90.9307 21.849 84.3196 20.5719 77.6451 20.5512C69.9521 20.5569 62.3552 22.2656 55.3983 25.5552C48.4418 28.8445 42.2968 33.6331 37.4034 39.5783C32.5101 45.5237 28.9893 52.4789 27.0929 59.946C25.1968 67.4132 24.9719 75.2077 26.4342 82.7723C27.8968 90.3376 31.0106 97.4838 35.5529 103.702C40.0951 109.92 45.9538 115.056 52.7093 118.742C59.4649 122.429 66.9502 124.574 74.6302 125.027C82.3102 125.476 89.9946 124.222 97.1341 121.351C97.8104 121.075 98.5343 120.938 99.2641 120.942C99.9939 120.948 100.715 121.098 101.388 121.384C102.06 121.667 102.67 122.083 103.182 122.602C103.694 123.124 104.099 123.739 104.373 124.418C104.647 125.097 104.786 125.819 104.78 126.551C104.775 127.283 104.625 128.004 104.341 128.68C104.056 129.352 103.643 129.961 103.122 130.476C102.602 130.989 101.987 131.395 101.31 131.667C93.7887 134.705 85.755 136.265 77.6451 136.268Z" fill="#151616"/>
@@ -117,6 +173,71 @@
     </div>
 </div>
 <div class="image" id="imageBG"></div>
+<div class="rules">
+  <p id="rules-view-button" class="rules-title show">ПРАВИЛА</p>
+<div id="rules-container">
+  <div id="rules-mk">
+    <ul>
+      <li>Турнир состоит из двух этапов: отборочная игра в группе и плей-офф.</li>
+      <li>Из группы выходит один игрок набравший больше всего побед (сначала учитываются победы в матчах, потом победы в раундах).</li>
+      <li>Если два игрока набрали одинаковое кол-во побед, то для определения победителя группы будет проведён дополнительный бой.</li>
+      <li>Играем в режиме «Турнир» стандартными стилями (свои стили использовать запрещено).</li>
+      <li>После завершения турнирного матча и победы одного из игроков, оба игрока должны сообщить результат волонтеру. Необходимо сообщить не только победителя, но и количество раундов. Например, если игрок победил в двух раундах, то очки будут считаться следующим образом, победитель 2 очка, проигравший 0, если было три раунда – победитель 2 очка, проигравший 1 очко.</li>
+      <li>В нестандартных, или неописанных в действующем варианте правил, ситуациях, судья имеет право разрешить ситуацию по своему усмотрению.</li>
+      <li>В случае опоздания на матч более, чем на 10 минут, участнику может быть присуждено техническое поражение.</li>
+      <li>Выбор арены: случайным образом.</li>
+      <li>Время раунда: 90 секунд.</li>
+      <li>Взаимодействия на арене: ВКЛ.</li>
+    </ul>
+    <p class="rules-title_red">ЗАПРЕЩЕНО</p>
+    <ul>
+      <li>Оскорбления в адрес соперника, организаторов Турнира и других участников соревнований.</li>
+      <li>Неспортивное поведение (например, намерено поддаваться).</li>
+      <li>Портить игровое оборудование.</li>
+    </ul>
+  </div>
+  <div id="rules-ufc">
+    <ul>
+      <li>Турнир состоит из двух этапов: отборочная игра в группе и плей-офф.</li>
+      <li>Из группы выходит один игрок набравший больше всего побед. Если два игрока в группе набрали одинаковое кол-во побед, то для них будет организован дополнительный бой, для определения победителя группы.</li>
+      <li>Для выбора доступны все бойцы Легкого и Среднего Веса. Соперники могут выбирать одинаковых бойцов.</li>
+      <li>После завершения турнирного матча и победы одного из игроков, оба игрока должны сообщить результат волонтеру.</li>
+      <li>Разрешается любой вид атак, захваты и болевые не запрещены.</li>
+      <li>В нестандартных, или неописанных в действующем варианте правил, ситуациях, судья имеет право разрешить ситуацию по своему усмотрению.</li>
+      <li>В случае опоздания на матч более, чем на 10 минут, участнику может быть присуждено техническое поражение.</li>
+      <li>Количество раундов: 3.</li>
+      <li>Тип таймера: ускоренный.</li>
+    </ul>
+    <p class="rules-title_red">ЗАПРЕЩЕНО</p>
+    <ul>
+      <li>Оскорбления в адрес соперника, организаторов Турнира и других участников соревнований.</li>
+      <li>Неспортивное поведение (например, намерено поддаваться).</li>
+      <li>Портить игровое оборудование.</li>
+    </ul>
+  </div>
+  <div id="rules-dirt">
+    <ul>
+      <li>Турнир состоит из двух этапов: отборочная игра в группе и плей-офф.</li>
+      <li>Из группы выходит один игрок набравший больше всего побед и меньшее время.</li>
+      <li>После завершения турнирного матча и победы одного из игроков, оба игрока должны сообщить результат волонтеру. Должны сообщить не только победителя, но и время вплоть до миллисекунд.</li>
+      <li>В нестандартных, или неописанных в действующем варианте правил, ситуациях, судья имеет право разрешить ситуацию по своему усмотрению.</li>
+      <li>В случае опоздания на матч более, чем на 10 минут, участнику может быть присуждено техническое поражение.</li>
+      <li>Игра будет проводится на разделанном экране.</li>
+      <li>Трасса: Brasil.</li>
+      <li>Время: День.</li>
+      <li>Погода: Сухая.</li>
+      <li>Машина: Aston Martin</li>
+      <li>Для динамики и зрелищности, помимо игроков на трассе будут 6 ботов в режиме Medium. В финале сложность будет увеличена до Hard.</li>
+    </ul>
+    <p class="rules-title_red">ЗАПРЕЩЕНО</p>
+    <ul>
+      <li>Оскорбления в адрес соперника, организаторов Турнира и других участников соревнований.</li>
+      <li>Неспортивное поведение (например, намерено поддаваться).</li>
+      <li>Портить игровое оборудование.</li>
+    </ul>
+  </div>
+</div>
+</div>
 <div id="container">
     <iframe id="fifaframe" src="https://challonge.com/ru/lqupkrfm/module" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
     <iframe class="frameblock" id="mkframe" src="https://challonge.com/ru/w5vx7lec/module" width="100%" height="100%" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
@@ -129,6 +250,11 @@
     const links = document.getElementsByClassName('link');
     const iframes = document.getElementsByTagName('iframe');
     const imageBG = document.getElementById('imageBG');
+    const rulesMK = document.getElementById('rules-mk');
+    const rulesUFC = document.getElementById('rules-ufc');
+    const rulesDIRT = document.getElementById('rules-dirt');
+    const changeRulesViewButton = document.getElementById('rules-view-button');
+    const rules = document.getElementsByClassName('rules');
     const str = location.hash.replace('#', '');
     if (str != '') {
       // show selected table
@@ -153,27 +279,63 @@
           imageBG.style.background = "url(https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Fifa21NintendoSwitchLegacyEdition_image1600w.jpg)";
           imageBG.style.backgroundPosition = "0% 17%";
           imageBG.style.backgroundSize = "cover";
+          rulesUFC.style.display = "none";
+          rulesDIRT.style.display = "none";
+          rulesMK.style.display = "none";
+          rules[0].style.display = "none"
           break;
         case 'ufc':
           imageBG.style.background = "url(https://games.mail.ru/hotbox/content_files/article/2018/1/f63f37c.jpeg)";
           imageBG.style.backgroundPosition = "0% 60%";
           imageBG.style.backgroundSize = "cover";
+          rulesUFC.style.display = "block";
+          rulesDIRT.style.display = "none";
+          rulesMK.style.display = "none";
+          rules[0].style.display = "block"
           break;
         case 'dirt':
           imageBG.style.background = "url(https://root-nation.com/wp-content/uploads/2020/11/dirt-5-title.jpg)";
           imageBG.style.backgroundPosition = "0% 35%";
           imageBG.style.backgroundSize = "cover";
+          rulesUFC.style.display = "none";
+          rulesDIRT.style.display = "block";
+          rulesMK.style.display = "none";
+          rules[0].style.display = "block"
           break;
         case 'mk':
           imageBG.style.background = "url(https://i.ytimg.com/vi/QZfw9yMK4Fk/maxresdefault.jpg)";
           imageBG.style.backgroundPosition = "0% 22%";
           imageBG.style.backgroundSize = "cover";
+          rulesUFC.style.display = "none";
+          rulesDIRT.style.display = "none";
+          rulesMK.style.display = "block";
+          rules[0].style.display = "block"
           break;
       }
     }
   }
   window.addEventListener('hashchange', hashHandler, false);
   hashHandler();
+</script>
+<script>
+  const changeRulesViewButton = document.getElementById('rules-view-button');
+
+  const handlerChangeRulesView = (e) => {  
+    const rulesContainer = document.getElementById('rules-container');
+    if(rulesContainer.className.includes('hide')) {
+      rulesContainer.classList.remove('hide');
+      changeRulesViewButton.classList.remove('hide')
+      changeRulesViewButton.classList.add('show')
+    } else {
+      rulesContainer.classList.add('hide');
+      changeRulesViewButton.classList.remove('show')
+      changeRulesViewButton.classList.add('hide')
+    }
+    e.preventDefault();
+    return;
+  };
+
+  changeRulesViewButton.addEventListener('click', handlerChangeRulesView);
 </script>
 </body>
 </html>
